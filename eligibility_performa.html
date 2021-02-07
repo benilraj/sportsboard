@@ -1,0 +1,283 @@
+<script src="js/jquery-3.5.1.js"></script>
+<!-- <script src="js/jquery.dataTables.min.js"></script>
+<script src="js/dataTables.bootstrap5.min.js"></script> -->
+<script src="js/bootstrap.bundle.min.js"></script>
+
+
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<!-- <link rel="stylesheet" href="css/dataTables.bootstrap5.min.css"> -->
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6 text-center">
+            <div class="h4">Anna University Sports Board</div>
+            <div class="h5 fw-bold">Anna University , Chennai - 25</div>
+            <div class="h5 fw-bolder">ELIGIBILITY PERFORMA OF PLAYERS</div>
+        </div>
+        <div class="col-sm-3"></div>
+
+    </div>
+    <div class="row form-group">
+        <div class="col-sm-3">
+            <label class="form-label" for="zoneNo">Zone No</label>
+            <input type="text" name="zoneNo" id="zoneNo" class="form-control">
+        </div>
+        <div class="col-sm-6"></div>
+        <div class="col-sm-3">
+            <label for="studentImage"> Candidate Photo
+                <img id="frame" src="" class="img-fluid" /></label>
+            <input type="file" class="form-control" name="studentImage" id="studentImage" accept="image/png, image/jpeg"
+                onchange="preview(document.getElementById('frame'))">
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-sm-12">
+            <label class="form-label" for="studentName">Name of the Student</label>
+            <input type="text" name="studentName" id="studentName" class="form-control">
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-sm-12">
+            <label class="form-label" for="game">Game</label>
+            <select class="form-select" id="game">
+                <option selected>Select the name of the game</option>
+                <option value="1">Volley Ball</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+            </select>
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-sm-12">
+            <label class="form-label" for="fatherName">Father's Name</label>
+            <input type="text" name="fatherName" id="fatherName" class="form-control">
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-sm-12">
+            <label class="form-label" for="motherName">Mother's Name</label>
+            <input type="text" name="motherName" id="motherName" class="form-control">
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-sm-12">
+            <label class="form-label" for="collegeName">Name of the College</label>
+            <input type="text" name="collegeName" id="collegeName" class="form-control">
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-sm-8">
+            <label class="form-label" for="dob">Date of Birth</label>
+            <input type="date" name="dob" id="dob" class="form-control">
+        </div>
+        <div class="col-sm-4 form-group">
+            <label class="form-label" for="age">Age</label>
+            <span class="h3 form-control text-primary" id="age"></span>
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-sm-12">
+            <label class="form-label" for="address">Address for Communication</label>
+            <textarea name="address" rows="5" id="address" class="form-control"></textarea>
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-sm-6">
+            <label class="form-label" for="mobile">Mobile</label>
+            <input type="tel" name="mobile" id="mobile" class="form-control">
+        </div>
+        <div class="col-sm-6">
+            <label class="form-label" for="landline">Landline</label>
+            <input type="tel" name="landline" id="landline" class="form-control">
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-sm-12">
+            <label class="form-label" for="address">Permanent Residential Addres</label>
+            <textarea name="address" rows="5" id="address" class="form-control"></textarea>
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-sm-12">
+            <label class="form-label" for="yearOfPassing">Month & Year of Passing <span class="fw-bold">+2 / 10
+                    Examinatoin</span></label>
+            <input type="month" name="yearOfPassing" id="yearOfPassing" class="form-control">
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-sm-12">
+            <label class="form-label" for="">Current Course of Study in Anna University</label>
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-sm-4">
+            <label class="form-label" for="ugPg">1. UG / PG </label>
+            <select class="form-select" id="ugPg">
+                <option selected>UG / PG</option>
+                <option value="ug">UG</option>
+                <option value="pg">PG</option>
+            </select>
+        </div>
+        <div class="col-sm-4">
+            <label class="form-label" for="year">2. Year</label>
+            <select class="form-select" id="year">
+                <option selected>I / II / III /IV</option>
+                <option value="1">I</option>
+                <option value="2">II</option>
+                <option value="3">III</option>
+                <option value="4">IV</option>
+            </select>
+        </div>
+        <div class="col-sm-4">
+            <label class="form-label" for="collegeName">3. Branch</label>
+            <input type="text" name="branch" id="branch" class="form-control">
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-sm-12">
+            <label class="form-label" for="registrationNo">Anna University Examinatoin Registration no</label>
+            <input type="text" name="registrationNo" id="registrationNo" class="form-control">
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-sm-12">
+            <label class="form-label" for="">Details of UG Study (for PG students)</label>
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-sm-3">
+            <label class="form-label" for="ugprogramme">Name of UG Programme</label>
+            <input type="text" name="ugprogramme" id="ugprogramme" class="form-control">
+        </div>
+        <div class="col-sm-3">
+            <label class="form-label" for="collegeOfStudy">College of Study</label>
+            <input type="text" name="collegeOfStudy" id="collegeOfStudy" class="form-control">
+        </div>
+        <div class="col-sm-3">
+            <label class="form-label" for="yearOfAdmission">Year of Admission</label>
+            <input type="text" name="yearOfAdmission" id="yearOfAdmission" class="form-control">
+        </div>
+        <div class="col-sm-3">
+            <label class="form-label" for="yearOfCompletion">Year of Completion</label>
+            <input type="text" name="yearOfCompletion" id="yearOfCompletion" class="form-control">
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-sm-12">
+            <label class="form-label" for="periodOfBreakOfStudy">Period of Break of Study (if any)</label>
+            <input type="text" name="periodOfBreakOfStudy" id="periodOfBreakOfStudy" class="form-control">
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-sm-12">
+            <label class="form-label" for="earlierRepresentation">Details of Earlier Representation in University team
+                *</label>
+            <input type="text" name="earlierRepresentation" id="earlierRepresentation" class="form-control">
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-sm-12">
+            <label class="form-label" for="earlierRepresentation">Details of Earlier Representation in University team
+                *</label>
+            <input type="text" name="earlierRepresentation" id="earlierRepresentation" class="form-control">
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-sm-12">
+            <label class="form-label" for="participationDetails">Details of Participation in National / International
+                Tournaments *</label>
+            <input type="text" name="participationDetails" id="participationDetails" class="form-control">
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col-sm-4">
+            <label class="form-label" for="uniformSize">Size of Uniform</label>
+        </div>
+        <div class="col-sm-8">
+            <div class="btn-group form-control" role="group" aria-label="Basic radio toggle button group">
+                <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+                <label class="btn btn-outline-secondary" for="btnradio1">36</label>
+                <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+                <label class="btn btn-outline-secondary" for="btnradio2">38</label>
+                <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
+                <label class="btn btn-outline-secondary" for="btnradio3">40</label>
+                <input type="radio" class="btn-check" name="btnradio" id="btnradio4" autocomplete="off">
+                <label class="btn btn-outline-secondary" for="btnradio4">42</label>
+                <input type="radio" class="btn-check" name="btnradio" id="btnradio5" autocomplete="off">
+                <label class="btn btn-outline-secondary" for="btnradio5">44</label>
+                <input type="radio" class="btn-check" name="btnradio" id="btnradio6" autocomplete="off">
+                <label class="btn btn-outline-secondary" for="btnradio6">46</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header fw-bold">
+            Enclosure
+        </div>
+        <div class="card-body">
+            <div class="row form-group">
+                <div class="col-sm-12">
+                    <label for="" class="form-label">
+                        (i) Attested copy of the +2 marksheet / Diploma Certificate
+                        <img id="marksheet12Preview" src="" class="img-fluid" /></label>
+                    <input type="file" class="form-control" name="marksheet12" id="marksheet12"
+                        accept="image/png, image/jpeg"
+                        onchange="preview(document.getElementById('marksheet12Preview'))">
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-sm-12">
+                    <label for="" class="form-label">
+                        (ii) Attested Copy of the AU Examination recent Hall Ticket / fee recipt for I year / recently
+                        reviewed Semester Mark Sheet
+                        <img id="hallTicketPreview" src="" class="img-fluid" /></label>
+                    </label>
+                    <input type="file" class="form-control" name="hallTicket" id="hallTicket"
+                        accept="image/png, image/jpeg" onchange="preview(document.getElementById('hallTicketPreview'))">
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-sm-12">
+                    <label for="" class="form-label">
+                        (iii) Attested copy of the degree certificate in case of PG students.
+                        <img id="degreeCertificatePreview" src="" class="img-fluid" />
+                    </label>
+                    <input type="file" class="form-control" name="degreeCertificate" id="degreeCertificate  "
+                        accept="image/png, image/jpeg"
+                        onchange="preview(document.getElementById('degreeCertificatePreview'))">
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-sm-12">
+                    <label for="" class="form-label">
+                        (iv) Attested copy of form III / II / I *
+                        <img id="attestedFormPreview" src="" class="img-fluid" />
+                    </label>
+                    <input type="file" class="form-control" name="attestedForm" id="attestedForm"
+                        accept="image/png, image/jpeg"
+                        onchange="preview(document.getElementById('attestedFormPreview'))">
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+</div>
+
+<script>
+    function calculateAge() {
+        //use ajax to send date to server and fetch age;
+    }
+    function preview(destination) {
+        destination.src = URL.createObjectURL(event.target.files[0]);
+    }
+</script>
