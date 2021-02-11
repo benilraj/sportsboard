@@ -1,0 +1,62 @@
+<script src="js/jquery-3.5.1.js"></script>
+<script src="js/jquery.dataTables.min.js"></script>
+<script src="js/dataTables.bootstrap5.min.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+
+
+<link rel="stylesheet" href="css/bootstrap.min.css"> 
+<link rel="stylesheet" href="css/dataTables.bootstrap5.min.css">
+
+
+<div class="container">
+    <h1>List of Eligibility performa</h1>
+    <table id="example" class="table table-striped table-bordered" style="width:100%">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Options</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Student</td>
+                <td>
+                    <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">View</button>
+                    <button class="btn btn-primary"> Approve </button>
+                    <button class="btn btn-danger">Disaprove</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Eligibility Performa</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Eligibility Perfoma details
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+<script>
+    $(document).ready(function () {
+        $('#example').DataTable();
+    });
+
+
+</script>
