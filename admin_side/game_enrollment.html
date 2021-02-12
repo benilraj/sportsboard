@@ -8,6 +8,14 @@
     <script src="../js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/admin.css">
+    <script>
+        function newInstructions()
+        {
+            var next=document.getElementById('new-instructions');
+            var str="<div class='col-sm-12'> <input type='text' class='form-control mb-3'/>  </div>";
+            next.innerHTML+=str;
+        }
+    </script>
 
 </head>
 
@@ -59,52 +67,31 @@
             <main role="main" class="col-md-10 ml-sm-auto col-lg-10 px-4">
                 <div
                     class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                    <h1 class="h2">Enroll Colleges</h1>
+                    <h1 class="h2">Enroll Games</h1>
                 </div>
                 <div class="container-fluid">
                     <div class="row mb-3">
-                        <div class="col-sm-12">
-                            <label for="collegeName">
-                                Name of the college
+                        <div class="col-sm-6">
+                            <label for="gameName">
+                                Name of the game
                             </label>
-                            <input type="text" id="collegeName" name="collegeName" class="form-control">
+                            <input type="text" id="gameName" name="gameName" class="form-control">
+                        </div>
+                        <div class="col-sm-6">
+                            <label for="playerCount">Number of Players</label>
+                            <input type="text" class="form-control" id="playerCount" name="playerCount">
                         </div>
                     </div>
                     <div class="row mb-3">
-                        <div class="col-sm-12">
-                            <label for="zone">
-                                Zone
-                            </label>
-                            <select class="form-select" id="zone">
-                                <option selected>Select zone no</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                                <option value="9">9</option>
-                                <option value="10">10</option>
-                                <option value="11">11</option>
-                                <option value="12">12</option>
-                                <option value="13">13</option>
-                                <option value="14">14</option>
-                                <option value="15">15</option>
-                                <option value="16">16</option>
-                                <option value="17">17</option>
-                                <option value="18">18</option>
-                                <option value="19">19</option>
-                            </select>
+                        <label for="instructions">Instructions</label>
+                        <div class="col-sm-11 mb-3">
+                            <input type="text" name="instructions" id="instructions" class="form-control">
                         </div>
-                    </div>
-                    <div class="row mb-3">
-                        <div class="col-sm-12">
-                            <label for="address">
-                                Address
-                            </label>
-                            <textarea type="text" name="address" rows="5" id="address" class="form-control"></textarea>
+                        <div class="col-sm-1">
+                            <button class="btn btn-secondary  btn-block" onclick="newInstructions()">+</button>
+                        </div>
+                        <div class="row" id="new-instructions">
+
                         </div>
                     </div>
                     <div class="row">
@@ -128,6 +115,7 @@
 
 </html>
 
+
 <!--
     can generate userid based on zone no and enrollment order
 
@@ -135,3 +123,4 @@
 
     zone no 19 first college
 -->
+
