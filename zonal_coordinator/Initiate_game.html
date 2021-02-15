@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+
+<body>
+    <div class="row">
+        <div class="col-md-12">
+            <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+                <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Sports Board</a>
+                <ul class="navbar-nav px-3">
+                    <li class="nav-item text-nowrap">
+                        <a class="nav-link" href="#">Sign out</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+                <div class="sidebar-sticky">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">
+                                <span data-feather="home"></span>
+                                Dashboard <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <h6
+                        class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                        <span>Saved reports</span>
+                        <a class="d-flex align-items-center text-muted" href="#">
+                            <span data-feather="plus-circle"></span>
+                        </a>
+                    </h6>
+                    <ul class="nav flex-column mb-2">
+                        <li class="nav-item">
+                            <a class="nav-link" href="Initiate_game.html">
+                                <span data-feather="file-text"></span>
+                                Initiate Game
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="nav flex-column mb-2">
+                        <li class="nav-item">
+                            <a class="nav-link" href="results.html">
+                                <span data-feather="file-text"></span>
+                                Publish Result
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <main role="main" class="col-md-10 ml-sm-auto col-lg-10 px-4">
+                <div
+                    class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">Initiate Event</h1>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-sm-4">
+                        <label for="eventName">Name of the Event</label>
+                        <input type="text" name="eventName" id="eventName" class="form-control">
+                    </div>
+                    <div class="col-sm-4">
+                        <label for="period">Period of the tournament</label>
+                        <input type="text" name="period" class="form-control" id="period">
+                    </div>
+                    <div class="col-sm-4">
+                        <label for="venue">Venue of the tournament</label>
+                        <input type="text" name="venue" class="form-control" id="venue">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <span class="h6 mb-1">Local Sports Coordinator</span>
+                    <div class="col-sm-1 text-center"><label for="coordinatorName"></label> Name</div>
+                    <div class="col-sm-5"><input type="text" name="coordinatorName" id="coordinatorName"
+                            class="form-control"></div>
+                    <div class="col-sm-1 text-center"><label for="coordinatorName"></label> Contact Number</div>
+                    <div class="col-sm-5"><input type="text" name="coordinatorName" id="coordinatorName"
+                            class="form-control"></div>
+                </div>
+                <div class="row mb-3">
+                    <span class="h6 mb-1">Local Sports Secretary</span>
+                    <div class="col-sm-1 text-center"><label for="secetaryName"></label> Name</div>
+                    <div class="col-sm-5"><input type="text" name="secetaryName" id="secetaryName" class="form-control">
+                    </div>
+                    <div class="col-sm-1 text-center"><label for="secetaryNumber"></label> Contact Number</div>
+                    <div class="col-sm-5"><input type="text" name="secetaryNumber" id="secetaryNumber"
+                            class="form-control"></div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-10"></div>
+                    <div class="col-sm-2 d-grid gap-1">
+                        <button onclick="addSchedule()" class="btn btn-secondary">Add to list</button>
+                    </div>
+                </div>
+
+                <div id="">
+                    <div class="text-center">
+                        SCHEDULE OF ZONAL SPORTS EVENTS
+                    </div>
+                    <div class="h6">
+                        Zone :
+                    </div>
+                    <div class="h6">
+                        Zonal Sports Coordinating Center:
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Sl.no</th>
+                                        <th>Name of the Event</th>
+                                        <th>Period of the tournament</th>
+                                        <th>Venue of the Tournament</th>
+                                        <th>Local Sports Coordinator</th>
+                                        <th>Local Sports Secretary</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="schedule">
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+
+            </main>
+        </div>
+    </div>
+
+   
+
+</body>
+
+<script>
+    var i=0;
+    function addSchedule()
+    {
+        var nameOfTheEvent=document.getElementById('eventName').value;
+        var periodOfTournament=document.getElementById('period').value;
+        var venueOfTheTournament=document.getElementById('venue').value;
+        var localSportsCoordinator=document.getElementById('coordinatorName').value;
+        var localSportsSecretary = document.getElementById('secetaryName').value;
+        i++;
+        var str="<tr><td>"+i+"</td><td>"+nameOfTheEvent+"</td><td>"+periodOfTournament+"</td><td>"+venueOfTheTournament+"</td><td>"+localSportsCoordinator+"</td><td>"+localSportsSecretary+"</td></tr>";
+        var schedule = document.getElementById('schedule');
+        schedule.innerHTML+=str;
+    }
+</script>
+
+</html>

@@ -48,9 +48,25 @@
                     </h6>
                     <ul class="nav flex-column mb-2">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="college_enrollment.html">
                                 <span data-feather="file-text"></span>
-                                Current month
+                                College Enrollment
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="nav flex-column mb-2">
+                        <li class="nav-item">
+                            <a class="nav-link" href="game_enrollment.html">
+                                <span data-feather="file-text"></span>
+                                Game Enrollment
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="nav flex-column mb-2">
+                        <li class="nav-item">
+                            <a class="nav-link" href="coordinator_list.html">
+                                <span data-feather="file-text"></span>
+                                Co-ordinator Details
                             </a>
                         </li>
                     </ul>
@@ -63,6 +79,27 @@
                 </div>
                 <div class="container-fluid">
                     <div class="row mb-3">
+                        <div class="col-sm-12 mb-2">
+                            <label for="collegeType" class="form-check-label">Type of College</label>
+                        </div>
+                        <div class="col-sm-3">
+                            <input type="radio" name="collegeType" id="govt" class="form-check-input">
+                            <label for="govt" class="form-check-label">Govenment College</label>
+                        </div>
+                        <div class="col-sm-3">
+                            <input type="radio" name="collegeType" id="affliated" class="form-check-input">
+                            <label for="affliated" class="form-check-label">Affliated College</label>
+                        </div>
+                        <div class="col-sm-3">
+                            <input type="radio" name="collegeType" id="universityDepartment" class="form-check-input">
+                            <label for="universityDepartment" class="form-check-label">University Department</label>
+                        </div>
+                        <div class="col-sm-3">
+                            <input type="radio" name="collegeType" id="constituent" class="form-check-input">
+                            <label for="constituent" class="form-check-label">Constituent</label>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
                         <div class="col-sm-12">
                             <label for="collegeName">
                                 Name of the college
@@ -71,7 +108,11 @@
                         </div>
                     </div>
                     <div class="row mb-3">
-                        <div class="col-sm-12">
+                        <div class="col-sm-6">
+                            <label for="collegeCode">College Code</label>
+                            <input type="text" class="form-control" id="collegeCode">
+                        </div>
+                        <div class="col-sm-6">
                             <label for="zone">
                                 Zone
                             </label>
@@ -97,6 +138,16 @@
                                 <option value="18">18</option>
                                 <option value="19">19</option>
                             </select>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-sm-6">
+                            <label for="contactEmail">Email</label>
+                            <input type="email" id="contactEmail" name="contactEmail" class="form-control">
+                        </div>
+                        <div class="col-sm-6">
+                            <label for="contactNumber">Contact Number</label>
+                            <input type="text" class="form-control" id="contactNumber" name="contactNumber">
                         </div>
                     </div>
                     <div class="row mb-3">
