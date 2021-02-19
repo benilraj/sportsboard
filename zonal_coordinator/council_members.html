@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+
+<body>
+    <div class="row">
+        <div class="col-md-12">
+            <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+                <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Sports Board</a>
+                <ul class="navbar-nav px-3">
+                    <li class="nav-item text-nowrap">
+                        <a class="nav-link" href="#">Sign out</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+                <div class="sidebar-sticky">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">
+                                <span data-feather="home"></span>
+                                Dashboard <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <h6
+                        class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                        <span>Saved reports</span>
+                        <a class="d-flex align-items-center text-muted" href="#">
+                            <span data-feather="plus-circle"></span>
+                        </a>
+                    </h6>
+                    <ul class="nav flex-column mb-2">
+                        <li class="nav-item">
+                            <a class="nav-link" href="Initiate_game.html">
+                                <span data-feather="file-text"></span>
+                                Initiate Game
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="nav flex-column mb-2">
+                        <li class="nav-item">
+                            <a class="nav-link" href="council_members.html">
+                                <span data-feather="file-text"></span>
+                                Council Members
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="nav flex-column mb-2">
+                        <li class="nav-item">
+                            <a class="nav-link" href="results.html">
+                                <span data-feather="file-text"></span>
+                                Publish Result
+                            </a>
+                        </li>
+                    </ul>
+                </div> 
+            </nav>
+            <main role="main" class="col-md-10 ml-sm-auto col-lg-10 px-4">
+                <div
+                    class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">Enroll Council Members</h1>
+                </div> 
+                <!-- There can only be 4 council Members-->
+                <table class="table">
+                    <thead>
+                        <th>Name</th>
+                        <th>Contact Number</th>
+                        <th>Email</th>
+                        <th>Details</th>
+                        <th>Options</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Kumar</td>
+                            <td>9876543210</td>
+                            <td>kumar@gmail.com</td>
+                            <td>physical director at panimalar enginnering college</td>
+                            <td class="d-grid gap-1"><button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</button></td>
+                        </tr>
+                        <tr>
+                            <td>Empty</td>
+                            <td>Empty</td>
+                            <td>Empty</td>
+                            <td>Empty</td>
+                            <td class="d-grid gap-1"><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" >Enroll</button></td>
+                        </tr>
+                        <tr>
+                            <td>Empty</td>
+                            <td>Empty</td>
+                            <td>Empty</td>
+                            <td>Empty</td>
+                            <td class="d-grid gap-1"><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" >Enroll</button></td>
+                        </tr>
+                        <tr>
+                            <td>Empty</td>
+                            <td>Empty</td>
+                            <td>Empty</td>
+                            <td>Empty</td>
+                            <td class="d-grid gap-1"><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" >Enroll</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </main>             
+              <!-- Modal -->
+              <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Enroll Council Member</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                     <div class="row mb-3">
+                         <div class="col-sm-12">
+                         <label for="name">Name</label>
+                         <input type="text" name="name" id="name" class="form-control">
+                        </div>
+                     </div>
+                     <div class="row mb-3">
+                         <div class="col-sm-12">
+                             <label for="contact_number">Contact Number</label>
+                             <input type="text" name="contactNumber" id="contactNumber" class="form-control">
+                         </div>
+                     </div>
+                     <div class="row mb-3">
+                         <div class="col-sm-12">
+                             <label for="contact_email">Contact Email</label>
+                             <input type="email" name="contactEmail" id="contactEmail" class="form-control">
+                         </div>
+                     </div>
+                     <div class="row mb-3">
+                         <div class="col-sm-12">
+                             <label for="details">Further Details</label>
+                             <textarea name="details" id="details" rows="5" class="form-control"></textarea>
+                         </div>
+                     </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary">Save</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -55,12 +55,21 @@
                     </ul>
                     <ul class="nav flex-column mb-2">
                         <li class="nav-item">
+                            <a class="nav-link" href="council_members.html">
+                                <span data-feather="file-text"></span>
+                                Council Members
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="nav flex-column mb-2">
+                        <li class="nav-item">
                             <a class="nav-link" href="results.html">
                                 <span data-feather="file-text"></span>
                                 Publish Result
                             </a>
                         </li>
                     </ul>
+                    
                 </div>
             </nav>
             <main role="main" class="col-md-10 ml-sm-auto col-lg-10 px-4">
@@ -71,14 +80,26 @@
                 <div class="row mb-3">
                     <div class="col-sm-4">
                         <label for="eventName">Name of the Event</label>
+                        <br>
                         <input type="text" name="eventName" id="eventName" class="form-control">
                     </div>
                     <div class="col-sm-4">
                         <label for="period">Period of the tournament</label>
-                        <input type="text" name="period" class="form-control" id="period">
+                        <div class="row">
+                            <div class="col-sm-5">
+                                <input type="date" name="periodStart" class="form-control" id="periodStart">
+                            </div>
+                            <div class="col-sm-1 fw-bold">
+                                to
+                            </div>
+                            <div class="col-sm-5">
+                                <input type="date" name="periodEnd" class="form-control" id="periodEnd">
+                            </div>
+                        </div>
                     </div>
                     <div class="col-sm-4">
                         <label for="venue">Venue of the tournament</label>
+                        <br>
                         <input type="text" name="venue" class="form-control" id="venue">
                     </div>
                 </div>
@@ -98,6 +119,31 @@
                     </div>
                     <div class="col-sm-1 text-center"><label for="secetaryNumber"></label> Contact Number</div>
                     <div class="col-sm-5"><input type="text" name="secetaryNumber" id="secetaryNumber"
+                            class="form-control"></div>
+                </div>
+                <div class="row mb-2">
+                    <span class="h6 mb-1">Zonal Selection Commity</span>
+                    <div class="col-sm-1 text-center"><label for="commity1Name"></label> Name</div>
+                    <div class="col-sm-5"><input type="text" name="commity1Name" id="commity1Name" class="form-control">
+                    </div>
+                    <div class="col-sm-1 text-center"><label for="commity1Number"></label> Contact Number</div>
+                    <div class="col-sm-5"><input type="text" name="commity1Number" id="commity1Number"
+                            class="form-control"></div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-sm-1 text-center"><label for="commity2Name"></label> Name</div>
+                    <div class="col-sm-5"><input type="text" name="commity2Name" id="commity2Name" class="form-control">
+                    </div>
+                    <div class="col-sm-1 text-center"><label for="commity2Number"></label> Contact Number</div>
+                    <div class="col-sm-5"><input type="text" name="commity2Number" id="commity2Number"
+                            class="form-control"></div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-sm-1 text-center"><label for="commity3Name"></label> Name</div>
+                    <div class="col-sm-5"><input type="text" name="commity3Name" id="commity3Name" class="form-control">
+                    </div>
+                    <div class="col-sm-1 text-center"><label for="commity3Number"></label> Contact Number</div>
+                    <div class="col-sm-5"><input type="text" name="commity3Number" id="commity3Number"
                             class="form-control"></div>
                 </div>
                 <div class="row">
@@ -128,6 +174,7 @@
                                         <th>Venue of the Tournament</th>
                                         <th>Local Sports Coordinator</th>
                                         <th>Local Sports Secretary</th>
+                                        <th>Commity Members</th>
                                     </tr>
                                 </thead>
                                 <tbody id="schedule">
@@ -152,12 +199,16 @@
     function addSchedule()
     {
         var nameOfTheEvent=document.getElementById('eventName').value;
-        var periodOfTournament=document.getElementById('period').value;
+        var periodStart=document.getElementById('periodStart').value;
+        var periodEnd=document.getElementById('periodEnd').value;
         var venueOfTheTournament=document.getElementById('venue').value;
         var localSportsCoordinator=document.getElementById('coordinatorName').value;
         var localSportsSecretary = document.getElementById('secetaryName').value;
+        var commity1 = document.getElementById('commity1Name').value;
+        var commity2 = document.getElementById('commity2Name').value;
+        var commity3 = document.getElementById('commity3Name').value;
         i++;
-        var str="<tr><td>"+i+"</td><td>"+nameOfTheEvent+"</td><td>"+periodOfTournament+"</td><td>"+venueOfTheTournament+"</td><td>"+localSportsCoordinator+"</td><td>"+localSportsSecretary+"</td></tr>";
+        var str="<tr><td>"+i+"</td><td>"+nameOfTheEvent+"</td><td>"+periodStart+" to "+periodEnd+"</td><td>"+venueOfTheTournament+"</td><td>"+localSportsCoordinator+"</td><td>"+localSportsSecretary+"</td><td>"+commity1+"<br>"+commity2+"<br>"+commity3+"</td</tr>";
         var schedule = document.getElementById('schedule');
         schedule.innerHTML+=str;
     }
